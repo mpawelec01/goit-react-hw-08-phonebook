@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from '../../redux/contacts/operations';
+import { editContact } from '../../redux/contacts/operations';
 import { selectContacts } from '../../redux/contacts/selectors';
 
-export const ContactForm = () => {
+export const ContactEditor = () => {
   const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
 
-  const handleSubmit = e => {
+  const handleEdit = e => {
     e.preventDefault();
     const form = e.target;
     const newContactName = form.elements.name.value;
@@ -21,7 +21,7 @@ export const ContactForm = () => {
       alert(`${newContactName} is already in contacts.`);
     } else {
       dispatch(
-        addContact({
+        editContact({
           name: newContactName,
           number: newContactNumber,
         })
@@ -31,7 +31,7 @@ export const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleEdit}>
       <label>
         Name
         <input
@@ -52,7 +52,8 @@ export const ContactForm = () => {
           required
         />
       </label>
-      <button type="submit">Add contact</button>
+      <button type="submit">Edit contact</button>
+      <button>Cancel</button>
     </form>
   );
 };

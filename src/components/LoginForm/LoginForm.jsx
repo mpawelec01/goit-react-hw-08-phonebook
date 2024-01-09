@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { selectIsLoggedIn } from '../../redux/selectors';
-import { login } from '../../redux/operations';
+import { selectIsLoggedIn } from '../../redux/auth/selectors';
+import { login } from '../../redux/auth/operations';
 import { Navigate } from 'react-router-dom';
 import '../RegisterForm/RegisterForm.module.css';
 
