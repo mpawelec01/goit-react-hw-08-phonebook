@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectIsLoggedIn } from '../../redux/auth/selectors';
 import { login } from '../../redux/auth/operations';
 import { Navigate } from 'react-router-dom';
-import '../RegisterForm/RegisterForm.module.css';
+import { Button, FormLabel, Input } from '@chakra-ui/react';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -27,16 +27,19 @@ export const LoginForm = () => {
   return (
     <div>
       <form onSubmit={handleLogin}>
-        <label htmlFor="loginEmail">Email</label>
-        <input name="email" id="loginEmail" type="email" />
-        <label htmlFor="loginPassword">Password</label>
-        <input
+        <FormLabel htmlFor="loginEmail">Email</FormLabel>
+        <Input marginBottom="5" name="email" id="loginEmail" type="email" />
+        <FormLabel htmlFor="loginPassword">Password</FormLabel>
+        <Input
+          marginBottom="5"
           name="password"
           id="loginPassword"
           type="password"
           autoComplete="off"
         />
-        <button type="submit">Log in</button>
+        <Button w="100%" type="submit">
+          Log In
+        </Button>
       </form>
     </div>
   );

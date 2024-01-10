@@ -1,10 +1,24 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink as ReactRouterLink } from 'react-router-dom';
+import { Box, Link } from '@chakra-ui/react';
 
 export const AuthNav = () => {
   return (
-    <div>
-      <NavLink to="/register">Register</NavLink>
-      <NavLink to="/login">Log In</NavLink>
-    </div>
+    <Box>
+      <Link
+        _activeLink={{ color: 'blue.500' }}
+        as={ReactRouterLink}
+        to="/register"
+      >
+        Register
+      </Link>
+      <Link
+        _activeLink={{ color: 'blue.500' }}
+        as={ReactRouterLink}
+        to="/login"
+        ml="25px"
+      >
+        Log In
+      </Link>
+    </Box>
   );
 };

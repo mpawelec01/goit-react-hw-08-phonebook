@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
-import '../RegisterForm/RegisterForm.module.css';
 import { register } from '../../redux/auth/operations';
 import { selectIsLoggedIn } from '../../redux/auth/selectors';
 import { Navigate } from 'react-router-dom';
+import { Button, FormLabel, Input } from '@chakra-ui/react';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -30,18 +30,26 @@ export const RegisterForm = () => {
   return (
     <div>
       <form onSubmit={handleRegistration}>
-        <label htmlFor="registrationName">Username</label>
-        <input name="username" id="registrationName" />
-        <label htmlFor="registrationEmail">Email</label>
-        <input name="email" type="email" id="registrationEmail" />
-        <label htmlFor="registrationPassword">Password</label>
-        <input
+        <FormLabel htmlFor="registrationName">Username</FormLabel>
+        <Input marginBottom="5" name="username" id="registrationName" />
+        <FormLabel htmlFor="registrationEmail">Email</FormLabel>
+        <Input
+          marginBottom="5"
+          name="email"
+          type="email"
+          id="registrationEmail"
+        />
+        <FormLabel htmlFor="registrationPassword">Password</FormLabel>
+        <Input
+          marginBottom="5"
           name="password"
           type="password"
           autoComplete="off"
           id="registrationPassword"
         />
-        <button type="submit">Register</button>
+        <Button w="100%" type="submit">
+          Register
+        </Button>
       </form>
     </div>
   );

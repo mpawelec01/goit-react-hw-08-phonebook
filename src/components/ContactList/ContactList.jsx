@@ -4,6 +4,7 @@ import { Navigate } from 'react-router-dom';
 import { selectError, selectIsLoading } from '../../redux/contacts/selectors';
 import { selectVisibleContacts } from '../../redux/filter/selectors';
 import { ContactListItem } from './ContactListItem';
+import { UnorderedList } from '@chakra-ui/react';
 
 export const ContactList = () => {
   const filteredContacts = useSelector(selectVisibleContacts);
@@ -16,7 +17,7 @@ export const ContactList = () => {
   }
 
   return (
-    <ul>
+    <UnorderedList display="flex" flexDirection="column" gap="3" pt="5">
       {filteredContacts?.map(item => (
         <ContactListItem
           key={item.id}
@@ -26,6 +27,6 @@ export const ContactList = () => {
         />
       ))}
       {isLoading && !error && <p>Updating...</p>}
-    </ul>
+    </UnorderedList>
   );
 };

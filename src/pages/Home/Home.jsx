@@ -1,3 +1,4 @@
+import { Box, Text } from '@chakra-ui/react';
 import { Helmet } from 'react-helmet';
 
 export const Home = () => {
@@ -6,7 +7,16 @@ export const Home = () => {
       <Helmet>
         <title>Home</title>
       </Helmet>
-      Phonebook welcome page 🤚
+      <Box
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        paddingTop={80}
+      >
+        <Text textTransform="uppercase" fontSize={36}>
+          Phonebook manager welcome page 📗
+        </Text>
+      </Box>
     </div>
   );
 };

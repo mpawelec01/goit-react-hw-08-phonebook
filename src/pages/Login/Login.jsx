@@ -1,3 +1,4 @@
+import { Box } from '@chakra-ui/react';
 import { LoginForm } from 'components/LoginForm/LoginForm';
 import { Helmet } from 'react-helmet';
 
@@ -7,7 +8,9 @@ export const Login = () => {
       <Helmet>
         <title>Login</title>
       </Helmet>
-      <LoginForm />
+      <Box display="flex" justifyContent="center" paddingTop="80px">
+        <LoginForm />
+      </Box>
     </div>
   );
 };
