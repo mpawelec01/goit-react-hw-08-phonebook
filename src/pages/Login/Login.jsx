@@ -2,7 +2,7 @@ import { Box } from '@chakra-ui/react';
 import { LoginForm } from 'components/LoginForm/LoginForm';
 import { Helmet } from 'react-helmet';
 
-export const Login = () => {
+const Login = () => {
   return (
     <div>
       <Helmet>
@@ -14,3 +14,5 @@ export const Login = () => {
     </div>
   );
 };
+
+export default Login;

@@ -1,7 +1,7 @@
 import { Box, Text } from '@chakra-ui/react';
 import { Helmet } from 'react-helmet';
 
-export const Home = () => {
+const Home = () => {
   return (
     <div>
       <Helmet>
@@ -20,3 +20,5 @@ export const Home = () => {
     </div>
   );
 };
+
+export default Home;

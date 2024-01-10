@@ -4,7 +4,7 @@ import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
 import { Helmet } from 'react-helmet';
 
-export const Contacts = () => {
+const Contacts = () => {
   return (
     <div>
       <Helmet>
@@ -18,3 +18,5 @@ export const Contacts = () => {
     </div>
   );
 };
+
+export default Contacts;

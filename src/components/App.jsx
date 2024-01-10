@@ -7,15 +7,15 @@ import { fetchContacts } from '../redux/contacts/operations';
 import { currentUser } from '../redux/auth/operations';
 import { selectIsLoggedIn, selectIsRefreshing } from '../redux/auth/selectors';
 
-import { Contacts } from 'pages/Contacts/Contacts';
-import { Home } from 'pages/Home/Home';
-import { Login } from 'pages/Login/Login';
-import { Register } from 'pages/Register/Register';
-
 import { Layout } from './Layout/Layout';
-import { NotFound } from './NotFound/NotFound';
-import { PrivateRoute } from './PrivateRoute/PrivateRoute';
-import { RestrictedRoute } from './RestrictedRoute/RestrictedRoute';
+
+const Contacts = lazy(() => import('pages/Contacts/Contacts'));
+const Home = lazy(() => import('pages/Home/Home'));
+const Login = lazy(() => import('pages/Login/Login'));
+const Register = lazy(() => import('pages/Register/Register'));
+const NotFound = lazy(() => import('./NotFound/NotFound'));
+const PrivateRoute = lazy(() => import('./PrivateRoute/PrivateRoute'));
+const RestrictedRoute = lazy(() => import('./RestrictedRoute/RestrictedRoute'));
 
 export const App = () => {
   const dispatch = useDispatch();
